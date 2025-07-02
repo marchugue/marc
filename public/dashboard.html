@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: radial-gradient(ellipse at top, #1a0023, #000);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+    .menu-box {
+      background: rgba(255, 255, 255, 0.06);
+      border: 2px solid rgba(255, 0, 200, 0.2);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      box-shadow: 0 0 20px rgba(255, 0, 144, 0.4);
+      border-radius: 1.5rem;
+      width: 100%;
+      max-width: 400px;
+      padding: 2rem;
+      text-align: center;
+      animation: fadeInUp 0.6s ease;
+    }
+    .menu-box h2 {
+      color: #ff9dfd;
+      margin-bottom: 2rem;
+      text-shadow: 0 0 10px #ff00c8;
+    }
+    .menu-button {
+      display: inline-block;
+      width: 100%;
+      margin: 12px 0;
+      padding: 14px 0;
+      font-size: 1rem;
+      font-weight: 500;
+      color: white;
+      background-color: #ff00c8;
+      border: none;
+      border-radius: 1rem;
+      cursor: pointer;
+      box-shadow: 0 0 10px #ff00c8, 0 0 20px #ff00c8;
+      text-decoration: none;
+      transition: 0.3s ease;
+    }
+    .menu-button:hover {
+      background-color: #e100b8;
+      box-shadow: 0 0 16px #ff33e6, 0 0 30px #ff00c8;
+    }
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="menu-box">
+    <h2>👋 Welcome, User!</h2>
+    <a href="profile.html" class="menu-button">👤 Profile</a>
+    <a href="settings.html" class="menu-button">⚙️ Settings</a>
+    <a href="https://www.youtube.com/watch?v=SIeeDcnu9Ck" target="_blank" class="menu-button">🌐 Youtube</a>
+    <button class="menu-button" onclick="logout()">🚪 Logout</button>
+  </div>
+  <script>
+    function logout() {
+      alert("Logged out successfully");
+      window.location.href = "index.html";
+    }
+  </script>
+</body>
+</html>

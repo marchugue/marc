@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Profile</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .profile-box {
+      background: rgba(255, 255, 255, 0.06);
+      border: 2px solid rgba(255, 0, 200, 0.2);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      box-shadow: 0 0 20px rgba(255, 0, 144, 0.4);
+      border-radius: 1.5rem;
+      width: 100%;
+      max-width: 400px;
+      padding: 2rem;
+      margin: auto;
+      margin-top: 40px;
+      text-align: center;
+      color: #fff;
+      animation: fadeInUp 0.6s ease;
+    }
+    .profile-box h2 {
+      color: #ff9dfd;
+      margin-bottom: 1rem;
+      text-shadow: 0 0 10px #ff00c8;
+    }
+    .profile-info {
+      text-align: left;
+      padding: 1rem;
+      border-radius: 1rem;
+      background: rgba(255, 255, 255, 0.05);
+      box-shadow: inset 0 0 10px rgba(255, 0, 200, 0.2);
+    }
+    .profile-info p {
+      margin: 10px 0;
+      font-size: 1rem;
+    }
+    .setup-form {
+      text-align: left;
+      margin-top: 1.5rem;
+    }
+    .setup-form label {
+      display: block;
+      margin: 15px 0 5px;
+      font-size: 0.95rem;
+    }
+    .setup-form input,
+    .setup-form select {
+      width: 100%;
+      padding: 10px;
+      border-radius: 1rem;
+      border: 1px solid #ff4fc8;
+      background: rgba(255, 255, 255, 0.08);
+      color: #fff;
+      font-size: 1rem;
+      box-shadow: inset 0 0 8px #ff00c8;
+    }
+    .setup-form input[disabled] {
+      color: #ccc;
+    }
+    .setup-form button {
+      margin-top: 1.5rem;
+      width: 100%;
+      padding: 12px;
+      background-color: #ff00c8;
+      color: white;
+      font-size: 1rem;
+      border: none;
+      border-radius: 1rem;
+      cursor: pointer;
+      box-shadow: 0 0 10px #ff00c8, 0 0 20px #ff00c8;
+    }
+    .setup-form button:hover {
+      background-color: #e100b8;
+    }
+    .back-link {
+      display: block;
+      margin-top: 1.5rem;
+      color: #ffcaff;
+      text-decoration: none;
+    }
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="profile-box">
+    <h2>👤 Profile</h2>
+
+    <p style="margin-bottom: 1.5rem;">Set up your profile</p>
+    <form class="setup-form">
+      <label for="fullName">Full Name</label>
+      <input type="text" id="fullName" placeholder="Marc Kian Hugue" />
+
+      <label for="email">Email Address</label>
+      <input type="email" id="email" placeholder="joyboy5546@gmail.com" />
+
+      <label for="username">Username</label>
+      <input type="text" id="username" placeholder="joyboy5546" />
+
+      <label for="location">Location</label>
+      <select id="location">
+        <option value="">-- Select Location --</option>
+        <option value="Philippines">Philippines</option>
+        <option value="Japan">Japan</option>
+        <option value="USA">USA</option>
+        <option value="Canada">Canada</option>
+        <option value="UK">UK</option>
+      </select>
+
+      <label for="memberSince">Member Since</label>
+      <input type="text" id="memberSince" disabled />
+
+      <button type="submit">Save Profile</button>
+    </form>
+
+    <a href="dashboard.html" class="back-link">← Back to Dashboard</a>
+    <a href="profile.html" class="back-link">👤 Go to profile</a>
+  </div>
+
+  <script>
+    // Automatically fill in "Member Since" with today's date if empty
+    const memberSinceField = document.getElementById("memberSince");
+    if (!memberSinceField.value) {
+      const now = new Date();
+      const options = { year: 'numeric', month: 'long', day: 'numeric' };
+      memberSinceField.value = now.toLocaleDateString('en-US', options);
+    }
+  </script>
+</body>
+</html>
